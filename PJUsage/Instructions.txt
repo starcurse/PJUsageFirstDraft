@@ -1,12 +1,28 @@
 If you're reading this, it's because you are ready to start using the Project Usage script! It may seem a bit confusing but no worries, I'll try to cover everything. Before we begin, be sure to do this or the script won't work!!
-1. Open Powershell as administrator and paste this: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+1. Add the "PJUsage" folder to the C: drive. Once completed, the pathway for the PJUsage folder should be "C:\PJUsage"
+
+This will ensure the setup script knows where to look for everything. Don't worry! The folder will be added to a secure location during setup.
+
+2. Open Powershell as administrator and paste this: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 This will allow your account to run scripts from Powershell. The Project Usage master script is intended to be run via Task  Scheduler, so keep that in mind and make sure your account is the one authorizing the script to be run every day.
 
+3. Run the setup script. The pathway should be "C:\PJUsage\SetupScript.PS1". If you paste that into your powershell session minus the quotes, the script will run.
 
-Project Usage uses a "master script" to call several individual scripts that build off of each other in a chronological way. The first script checks for evidence that the same setup has already been run, and if it hasn't, it will run the setup and configure the necessary settings. The rest of the scripts will run one at a time and queue the next script when finished. If any script fails to run, an error message with my contact information will be generated. Send me an email and I'll be sure to fix it up.
+The third step will run the setup script, making sure everything is in it's correct place. You will receive a prompt with questions, make sure to answer them! If you encounter an error running the script, please do not continue. Send me an email, or you may troubleshoot it by checking the logs at "C:\Security\Scripts\Logs\GeneralErrors.txt". If that pathway doesn't exist, then email me and I'll get you sorted.
 
-This package includes this instructions file, the scripts, and a macro-enabled excel template. I am the sole author of these scripts and relinquish any proprietary claim I may have to them. 
+4. Run the master script manually.
+
+Make sure to run the master script manually first! This will allow you to make sure no errors occurred and that everything is running properly. 
+
+5. Add the master script to Task Scheduler and make sure it is set to run at the same time everyday.
+
+This final step is important. If the script is not set to run every 24 hours, there is a chance you could lose some data, since there will be a short time where the script is not programmed to pull data. Alternatively, this script could be run manually when needed, but I would need to adjust some things. If this is what you would like to do, reach out to me and I'll get you sorted.
+
+Project Usage uses a "master script" to call several individual scripts that build off of each other in a chronological way. The first script checks for evidence that the same setup has already been run, and if it hasn't, it will run the setup and configure the necessary settings. The rest of the scripts will run one at a time and queue the next script when finished. If any script fails to run, an error message will be generated. Send me an email at ckbybee@gmail.com or carson.bybee@sdl.usu.edu and I'll be sure to fix it up.
+
+This package includes this instructions file, the scripts, and two excel templates. I am the sole author of these scripts and relinquish any proprietary claim I may have to them.
 
 Send me an email if you have any questions.
 
