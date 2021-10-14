@@ -1,0 +1,13 @@
+If you're reading this, it's because you are ready to start using the Project Usage script! It may seem a bit confusing but no worries, I'll try to cover everything. Before we begin, be sure to do this or the script won't work!!
+1. Open Powershell as administrator and paste this: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+This will allow your account to run scripts from Powershell. The Project Usage master script is intended to be run via Task  Scheduler, so keep that in mind and make sure your account is the one authorizing the script to be run every day.
+
+
+Project Usage uses a "master script" to call several individual scripts that build off of each other in a chronological way. The first script checks for evidence that the same setup has already been run, and if it hasn't, it will run the setup and configure the necessary settings. The rest of the scripts will run one at a time and queue the next script when finished. If any script fails to run, an error message with my contact information will be generated. Send me an email and I'll be sure to fix it up.
+
+This package includes this instructions file, the scripts, and a macro-enabled excel template. I am the sole author of these scripts and relinquish any proprietary claim I may have to them. 
+
+Send me an email if you have any questions.
+
+Carson Bybee
